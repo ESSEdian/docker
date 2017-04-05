@@ -1,4 +1,6 @@
 #!/bin/bash
+systemctl stop firewalld
+systemctl disable firewalld
 yum install iptables-services -y
 yum instal net-tools -y
 yum remove docker \
