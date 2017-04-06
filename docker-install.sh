@@ -14,4 +14,4 @@ yum-config-manager \
     https://download.docker.com/linux/centos/docker-ce.repo
 yum-config-manager --enable docker-ce-edge
 yum makecache fast
-yum install docker-ce -y
+yum install docker-ce-17.03.1.ce-1.el7.centos -y
