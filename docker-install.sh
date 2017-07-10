@@ -7,7 +7,7 @@ yum remove docker \
                   docker-common \
                   container-selinux \
                   docker-selinux \
-                  docker-engine
+                  docker-engine -y
 yum install -y yum-utils
 yum-config-manager \
     --add-repo \
