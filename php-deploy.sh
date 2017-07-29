@@ -1,12 +1,12 @@
 #!/bin/bash
-if [ ! -f /var/www/html/README.md ];then
-	rm -rf /var/www/html
-	cd /var/www
+if [ ! -f /home/wwwroot/default/README.md ];then
+	rm -rf /home/wwwroot/default
+	cd /home/wwwroot
 	git clone http://$user:$password@gitlab.bjike.com:10080/$user/$project.git 
-	mv $project html
-	cd /var/www/html/
+	mv $project default
+	cd /home/wwwroot/default/
 else
-	cd /var/www/html/
+	cd /home/wwwroot/default/
 	git pull
 fi
 if [ "$commit" != "" ];then
