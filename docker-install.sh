@@ -8,10 +8,10 @@ yum remove docker \
                   container-selinux \
                   docker-selinux \
                   docker-engine -y
-yum install -y yum-utils
+yum install -y yum-utils device-mapper-persistent-data lvm2
 yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
-yum-config-manager --enable docker-ce-edge
+yum-config-manager --disable docker-ce-edge
 yum makecache fast
-yum install docker-ce-selinux-17.03.0.ce-1.el7.centos.noarch -y
+yum install docker-ce-17.06.1.ce-1.el7.centos -y
