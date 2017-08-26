@@ -1,3 +1,3 @@
 #!/bin/bash
 cd $project
-java -jar `ls | grep *.jar` &
+pkill java ; java -jar `ls | grep *.jar` &

@@ -11,4 +11,4 @@ if [ "$commit" != "" ];then
 else
 	git checkout master
 fi
-java -jar `ls | grep *.jar` &
+pkill java ; java -jar `ls | grep *.jar` &
