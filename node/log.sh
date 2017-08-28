@@ -1,2 +1,2 @@
 #!/bin/bash
-tail -f /tmp/node.log
+tail -f /var/log/node.log

@@ -1,6 +1,7 @@
 #!/bin/bash
 cd /$project
 if [ ! -d $project ];then
+	echo "克隆中"
 	git clone http://$user:$password@gitlab.bjike.com:10080/$user/$project.git 
 	cd /$project
 else
@@ -12,6 +13,6 @@ if [ "$commit" != "" ];then
 else
 	git checkout master
 fi
-nodeId=`ps -ef | grep index.js | grep -v grep | awk 'END{print$2}'`
-kill -9 $nodeId ; sleep 3 && nohup /root/issp/docker/node/node.sh > /tmp/node.log 2>&1
-tail -f /tmp/node.log
+/root/issp/docker/node/stop.sh
+nohup /root/issp/docker/node/node.sh > /var/log/node.log 2>&1
+echo "node程序启动完成."

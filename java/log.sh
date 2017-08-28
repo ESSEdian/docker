@@ -1,2 +1,2 @@
 #!/bin/bash
-tail -f /tmp/java.log
+tail -f /var/log/java.log

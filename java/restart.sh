@@ -1,4 +1,18 @@
 #!/bin/bash
 cd /$project
-pkill java ; sleep 3 && nohup /root/issp/docker/java/java.sh > /tmp/java.log 2>&1
-tail -f /tmp/java.log
+javaPid=`ps -ef | grep "jar$" | awk '{print$2}'`
+if [ "$javaPid" != "" ];then
+	if [ "$1" == "kill" ];then
+		kill -9 $javaPid
+	else
+		kill -15 $javaPid
+	fi
+	sleep 2
+	javaPid=`ps -ef | grep "jar$" | awk '{print$2}'`
+	if [ "$javaPid" != "" ];then
+		echo "java程序重启失败,请查询log日志."
+		exit 1
+	fi
+fi
+nohup /root/issp/docker/java/java.sh > /var/log/java.log 2>&1
+echo "java程序重启完成,输入log可查看日志."

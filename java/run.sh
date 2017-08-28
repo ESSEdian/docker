@@ -11,5 +11,5 @@ if [ "$commit" != "" ];then
 else
 	git checkout master
 fi
-pkill java ; sleep 3 && nohup /root/issp/docker/java/java.sh > /tmp/java.log 2>&1
-tail -f /tmp/java.log
+/root/issp/docker/java/stop.sh
+nohup /root/issp/docker/java/java.sh > /var/log/java.log 2>&1
