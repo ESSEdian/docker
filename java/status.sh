@@ -1,5 +1,5 @@
 #!/bin/bash
-ps -ef | grep java | grep -v grep | grep -v "status.sh" > /dev/null
+ps -ef | grep "jar$" > /dev/null
 if [ $? -eq 0 ];then
 	echo "java程序运行当中."
 else
