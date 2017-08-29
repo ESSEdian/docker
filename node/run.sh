@@ -1,6 +1,6 @@
 #!/bin/bash
-cd /$project
-if [ ! -d $project ];then
+cd /
+if [ ! -d /$project ];then
 	echo "克隆中"
 	git clone http://$user:$password@gitlab.bjike.com:10080/$user/$project.git 
 	cd /$project

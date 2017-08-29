@@ -1,9 +1,10 @@
 #!/bin/bash
-if [ ! -d $project ];then
+cd /
+if [ ! -d /$project ];then
 	git clone http://$user:$password@gitlab.bjike.com:10080/$user/$project.git 
-	cd $project
+	cd /$project
 else
-	cd $project
+	cd /$project
 	git pull
 fi
 if [ "$commit" != "" ];then
