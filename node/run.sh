@@ -1,7 +1,15 @@
 #!/bin/bash
 cd /
 if [ ! -d /$project ];then
-	echo "克隆中"
+	if [ "$1" == "webhook" ];then
+		logs=">>>>>>>>>>> webhook 克隆中  <<<<<<<<<<<"
+		echo $logs
+		echo $logs >> /var/log/node.log
+	else
+		logs=">>>>>>>>>>> 克隆中 <<<<<<<<<<<<"
+		echo $logs >> /var/log/node.log
+		echo $logs
+	fi
 	git clone http://$user:$password@gitlab.bjike.com:10080/$user/$project.git 
 	cd /$project
 else
@@ -15,4 +23,12 @@ else
 fi
 /root/issp/docker/node/stop.sh
 nohup /root/issp/docker/node/node.sh > /var/log/node.log 2>&1
-echo "node程序启动完成."
+if [ "$1" == "webhook" ];then
+	logs=">>>>>>>>>>>>>> node程序webhook自动部署完成  <<<<<<<<<<<<<"
+	echo $logs >> /var/log/node.log 
+	echo $logs
+else
+	logs=">>>>>>>>>>>>>> node程序启动完成 <<<<<<<<<<<<<"
+	echo $logs >> /var/log/node.log
+	echo $logs
+fi
