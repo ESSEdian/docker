@@ -1,3 +1,3 @@
 #!/bin/bash
 cd /$project
-npm start &
+$projectPshellPre node index.js &
