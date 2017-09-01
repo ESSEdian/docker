@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /$project
-javaPid=`ps -ef | grep "jar" | awk '{print$2}'`
+javaPid=`ps -ef | grep "jar" | grep -v grep | awk '{print$2}'`
 if [ "$javaPid" != "" ];then
 	if [ "$1" == "kill" ];then
 		kill -9 $javaPid
@@ -8,7 +8,7 @@ if [ "$javaPid" != "" ];then
 		kill -15 $javaPid
 	fi
 	sleep 2
-	javaPid=`ps -ef | grep "jar" | awk '{print$2}'`
+	javaPid=`ps -ef | grep "jar" | grep -v grep | awk '{print$2}'`
 	if [ "$javaPid" != "" ];then
 		echo "java程序重启失败,请查询log日志."
 		exit 1

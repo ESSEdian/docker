@@ -1,5 +1,5 @@
 #!/bin/bash
-javaPid=`ps -ef | grep "jar" | awk '{print$2}'`
+javaPid=`ps -ef | grep "jar" | grep -v grep | awk '{print$2}'`
 if [ "$javaPid" != "" ];then
 	kill -9 $javaPid
 	echo "java程序强制停止完成."
