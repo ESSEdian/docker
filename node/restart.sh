@@ -14,5 +14,6 @@ if [ "$nodeId" != "" ];then
 		exit 1
 	fi
 fi
-nohup /root/issp/docker/node/node.sh > /var/log/node.log 2>&1
+#临时脚本复制到了/usr/bin目录中
+nohup /usr/bin/node.sh > /var/log/node.log 2>&1
 echo "node程序重启完成."

@@ -22,7 +22,7 @@ else
 	git checkout master
 fi
 /root/issp/docker/node/stop.sh
-nohup /root/issp/docker/node/node.sh > /var/log/node.log 2>&1
+nohup /usr/bin/node.sh > /var/log/node.log 2>&1
 if [ "$1" == "webhook" ];then
 	logs=">>>>>>>>>>>>>> node程序webhook自动部署完成  <<<<<<<<<<<<<"
 	echo $logs >> /var/log/node.log 

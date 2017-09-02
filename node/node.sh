@@ -1,3 +1,3 @@
 #!/bin/bash
 cd /$project
-projectPort node index.js &
+node index.js &
