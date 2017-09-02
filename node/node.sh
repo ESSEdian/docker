@@ -1,3 +1,3 @@
 #!/bin/bash
 cd /$project
-$projectPshellPre node index.js &
+projectPort node index.js &
