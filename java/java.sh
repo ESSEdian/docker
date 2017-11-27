@@ -1,3 +1,3 @@
 #!/bin/bash
 cd /$project
-java -jar $projectPshellPre `ls | grep "jar$"` $projectPshellPos &
+java -jar -Xms400m -Xmx400m $projectPshellPre `ls | grep "jar$"` $projectPshellPos &
