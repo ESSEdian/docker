@@ -10,7 +10,7 @@ if [ ! -d /$project ];then
 		echo $logs >> /var/log/java.log
 		echo $logs
 	fi
-	git clone http://$user:$password@gitlab.bjike.com:10080/$user/$project.git
+	git clone http://$user:$password@172.17.205.30:10080/$user/$project.git
 	cd /$project
 else
 	cd /$project

@@ -2,7 +2,7 @@
 if [ ! -f /home/wwwroot/default/README.md ];then
 	rm -rf /home/wwwroot/default
 	cd /home/wwwroot
-	git clone http://$user:$password@gitlab.bjike.com:10080/$user/$project.git 
+	git clone http://$user:$password@172.17.205.30:10080/$user/$project.git 
 	mv $project default
 	cd /home/wwwroot/default/
 else
